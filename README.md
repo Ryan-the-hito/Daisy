@@ -1,4 +1,4 @@
-# 🌼Daisy: Ambient light reminder and auto balancer
+# 🌼Daisy: Ambient Light Reminder and Auto-switcher
 ![DfHImWQ](https://i.imgur.com/DfHImWQ.png)
 
 A macOS app to notify you when your ambient light is too dark or bright.
