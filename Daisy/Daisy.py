@@ -15,6 +15,12 @@ import webbrowser
 import sys
 import applescript
 import subprocess
+try:
+	from AppKit import NSWorkspace
+except ImportError:
+	print("can't import AppKit -- maybe you're running python from homebrew?")
+	print("try running with /usr/bin/python instead")
+	exit(1)
 
 
 app = QApplication(sys.argv)
@@ -111,7 +117,7 @@ class window_about(QWidget):  # 增加说明页面(About)
 		widg2.setLayout(blay2)
 
 		widg3 = QWidget()
-		lbl1 = QLabel('Version 0.0.1', self)
+		lbl1 = QLabel('Version 0.0.2', self)
 		blay3 = QHBoxLayout()
 		blay3.setContentsMargins(0, 0, 0, 0)
 		blay3.addStretch()
@@ -544,7 +550,7 @@ class window_update(QWidget):  # 增加更新页面（Check for Updates）
 		self.initUI()
 
 	def initUI(self):  # 说明页面内信息
-		lbl = QLabel('Current Version: 0.0.1', self)
+		lbl = QLabel('Current Version: 0.0.2', self)
 		lbl.move(110, 75)
 
 		lbl0 = QLabel('Check Now:', self)
@@ -589,23 +595,25 @@ class window3(QWidget):  # 主窗口
 		self.mytimer.timeout.connect(self.onTimer)
 
 	def onTimer(self):
-		resp = applescript.tell.app("System Events", """set myCommand to "shortcuts run \\"Brightness Alarm\\""
-		do shell script myCommand""")
-		assert resp.code == 0, resp.err
-		Brightness = int(float(resp.out)*100)
-		print(Brightness)
-		UseShortcut = codecs.open(BasePath + 'CertAction.txt', 'r', encoding='utf-8').read()
-		if UseShortcut == '1':
-			DarkShort = codecs.open(BasePath + 'DarkTime.txt', 'r', encoding='utf-8').read()
-			BrightShort = codecs.open(BasePath + 'BrightTime.txt', 'r', encoding='utf-8').read()
-			if Brightness < 20:
-				cmd = """set myCommand to "shortcuts run \\"%s\\""
-				do shell script myCommand""" % (DarkShort)
-				subprocess.call(['osascript', '-e', cmd])
-			if Brightness > 90:
-				cmd = """set myCommand to "shortcuts run \\"%s\\""
-				do shell script myCommand""" % (BrightShort)
-				subprocess.call(['osascript', '-e', cmd])
+		active_app = NSWorkspace.sharedWorkspace().activeApplication()
+		if active_app['NSApplicationName'] != 'loginwindow':
+			resp = applescript.tell.app("System Events", """set myCommand to "shortcuts run \\"Brightness Alarm\\""
+			do shell script myCommand""")
+			assert resp.code == 0, resp.err
+			Brightness = int(float(resp.out)*100)
+			print(Brightness)
+			UseShortcut = codecs.open(BasePath + 'CertAction.txt', 'r', encoding='utf-8').read()
+			if UseShortcut == '1':
+				DarkShort = codecs.open(BasePath + 'DarkTime.txt', 'r', encoding='utf-8').read()
+				BrightShort = codecs.open(BasePath + 'BrightTime.txt', 'r', encoding='utf-8').read()
+				if Brightness < 20:
+					cmd = """set myCommand to "shortcuts run \\"%s\\""
+					do shell script myCommand""" % (DarkShort)
+					subprocess.call(['osascript', '-e', cmd])
+				if Brightness > 90:
+					cmd = """set myCommand to "shortcuts run \\"%s\\""
+					do shell script myCommand""" % (BrightShort)
+					subprocess.call(['osascript', '-e', cmd])
 
 	def activate(self):  # 设置窗口显示
 		if action3.isChecked():
