@@ -81,7 +81,7 @@ class window_about(QWidget):  # 增加说明页面(About)
 
 	def initUI(self):  # 说明页面内信息
 		self.setUpMainWindow()
-		self.resize(400, 380)
+		self.resize(400, 410)
 		self.center()
 		self.setWindowTitle('About')
 		self.setFocus()
@@ -117,7 +117,7 @@ class window_about(QWidget):  # 增加说明页面(About)
 		widg2.setLayout(blay2)
 
 		widg3 = QWidget()
-		lbl1 = QLabel('Version 0.0.2', self)
+		lbl1 = QLabel('Version 1.0.0 (Free version)', self)
 		blay3 = QHBoxLayout()
 		blay3.setContentsMargins(0, 0, 0, 0)
 		blay3.addStretch()
@@ -178,6 +178,23 @@ class window_about(QWidget):  # 增加说明页面(About)
 		blay8.addStretch()
 		widg8.setLayout(blay8)
 
+		bt7 = QPushButton('Buy me a cup of coffee☕', self)
+		bt7.setMaximumHeight(20)
+		bt7.setMinimumWidth(120)
+		bt7.clicked.connect(self.coffee)
+
+		bt8 = QPushButton('Upgrade to Pro for $1!!', self)
+		bt8.setMaximumHeight(20)
+		bt8.setMinimumWidth(120)
+		bt8.clicked.connect(self.upgrade)
+
+		widg8_5 = QWidget()
+		blay8_5 = QHBoxLayout()
+		blay8_5.setContentsMargins(0, 0, 0, 0)
+		blay8_5.addWidget(bt8)
+		blay8_5.addWidget(bt7)
+		widg8_5.setLayout(blay8_5)
+
 		widg9 = QWidget()
 		bt3 = QPushButton('🍪\n¥5', self)
 		bt3.setMaximumHeight(50)
@@ -227,6 +244,7 @@ class window_about(QWidget):  # 增加说明页面(About)
 		main_h_box.addWidget(widg6)
 		main_h_box.addWidget(widg7)
 		main_h_box.addWidget(widg8)
+		main_h_box.addWidget(widg8_5)
 		main_h_box.addWidget(widg9)
 		main_h_box.addWidget(widg10)
 		main_h_box.addStretch()
@@ -237,6 +255,12 @@ class window_about(QWidget):  # 增加说明页面(About)
 
 	def homepage(self):
 		webbrowser.open('https://github.com/Ryan-the-hito/Daisy')
+
+	def coffee(self):
+		webbrowser.open('https://www.buymeacoffee.com/ryanthehito')
+
+	def upgrade(self):
+		webbrowser.open('https://www.buymeacoffee.com/ryanthehito/e/155171')
 
 	def donate(self):
 		dlg = CustomDialog()
@@ -303,10 +327,10 @@ class CustomDialog(QDialog):  # (About1)
 		bt1.setMaximumHeight(20)
 		bt1.setMinimumWidth(100)
 		bt1.clicked.connect(self.cancel)
-		bt2 = QPushButton('Donate later~', self)
+		bt2 = QPushButton('Neither one above? Buy me a coffee~', self)
 		bt2.setMaximumHeight(20)
-		bt2.setMinimumWidth(100)
-		bt2.clicked.connect(self.cancel)
+		bt2.setMinimumWidth(260)
+		bt2.clicked.connect(self.coffee)
 		blay8 = QHBoxLayout()
 		blay8.setContentsMargins(0, 0, 0, 0)
 		blay8.addStretch()
@@ -329,6 +353,9 @@ class CustomDialog(QDialog):  # (About1)
 		cp = self.screen().availableGeometry().center()
 		qr.moveCenter(cp)
 		self.move(qr.topLeft())
+
+	def coffee(self):
+		webbrowser.open('https://www.buymeacoffee.com/ryanthehito')
 
 	def cancel(self):  # 设置取消键的功能
 		self.close()
@@ -373,10 +400,10 @@ class CustomDialog2(QDialog):  # (About2)
 		bt1.setMaximumHeight(20)
 		bt1.setMinimumWidth(100)
 		bt1.clicked.connect(self.cancel)
-		bt2 = QPushButton('Donate later~', self)
+		bt2 = QPushButton('Neither one above? Buy me a coffee~', self)
 		bt2.setMaximumHeight(20)
-		bt2.setMinimumWidth(100)
-		bt2.clicked.connect(self.cancel)
+		bt2.setMinimumWidth(260)
+		bt2.clicked.connect(self.coffee)
 		blay8 = QHBoxLayout()
 		blay8.setContentsMargins(0, 0, 0, 0)
 		blay8.addStretch()
@@ -399,6 +426,9 @@ class CustomDialog2(QDialog):  # (About2)
 		cp = self.screen().availableGeometry().center()
 		qr.moveCenter(cp)
 		self.move(qr.topLeft())
+
+	def coffee(self):
+		webbrowser.open('https://www.buymeacoffee.com/ryanthehito')
 
 	def cancel(self):  # 设置取消键的功能
 		self.close()
@@ -443,10 +473,10 @@ class CustomDialog3(QDialog):  # (About3)
 		bt1.setMaximumHeight(20)
 		bt1.setMinimumWidth(100)
 		bt1.clicked.connect(self.cancel)
-		bt2 = QPushButton('Donate later~', self)
+		bt2 = QPushButton('Neither one above? Buy me a coffee~', self)
 		bt2.setMaximumHeight(20)
-		bt2.setMinimumWidth(100)
-		bt2.clicked.connect(self.cancel)
+		bt2.setMinimumWidth(260)
+		bt2.clicked.connect(self.coffee)
 		blay8 = QHBoxLayout()
 		blay8.setContentsMargins(0, 0, 0, 0)
 		blay8.addStretch()
@@ -469,6 +499,9 @@ class CustomDialog3(QDialog):  # (About3)
 		cp = self.screen().availableGeometry().center()
 		qr.moveCenter(cp)
 		self.move(qr.topLeft())
+
+	def coffee(self):
+		webbrowser.open('https://www.buymeacoffee.com/ryanthehito')
 
 	def cancel(self):  # 设置取消键的功能
 		self.close()
@@ -513,10 +546,10 @@ class CustomDialog4(QDialog):  # (About4)
 		bt1.setMaximumHeight(20)
 		bt1.setMinimumWidth(100)
 		bt1.clicked.connect(self.cancel)
-		bt2 = QPushButton('Donate later~', self)
+		bt2 = QPushButton('Neither one above? Buy me a coffee~', self)
 		bt2.setMaximumHeight(20)
-		bt2.setMinimumWidth(100)
-		bt2.clicked.connect(self.cancel)
+		bt2.setMinimumWidth(260)
+		bt2.clicked.connect(self.coffee)
 		blay8 = QHBoxLayout()
 		blay8.setContentsMargins(0, 0, 0, 0)
 		blay8.addStretch()
@@ -540,6 +573,9 @@ class CustomDialog4(QDialog):  # (About4)
 		qr.moveCenter(cp)
 		self.move(qr.topLeft())
 
+	def coffee(self):
+		webbrowser.open('https://www.buymeacoffee.com/ryanthehito')
+
 	def cancel(self):  # 设置取消键的功能
 		self.close()
 
@@ -550,31 +586,41 @@ class window_update(QWidget):  # 增加更新页面（Check for Updates）
 		self.initUI()
 
 	def initUI(self):  # 说明页面内信息
-		lbl = QLabel('Current Version: 0.0.2', self)
-		lbl.move(110, 75)
+		lbl = QLabel('Current Version: 1.0.0', self)
+		lbl.move(110, 105)
 
 		lbl0 = QLabel('Check Now:', self)
 		lbl0.move(30, 20)
 
-		bt1 = QPushButton('Check Github', self)
+		bt1 = QPushButton('Google Drive', self)
+		bt1.setFixedWidth(120)
 		bt1.clicked.connect(self.upd)
 		bt1.move(110, 15)
 
-		bt2 = QPushButton('Check Baidu Net Disk', self)
-		bt2.clicked.connect(self.upd2)
-		bt2.move(110, 45)
+		bt3 = QPushButton('Dropbox', self)
+		bt3.setFixedWidth(120)
+		bt3.clicked.connect(self.upd3)
+		bt3.move(110, 45)
 
-		self.resize(300, 110)
+		bt2 = QPushButton('Baidu Netdisk', self)
+		bt2.setFixedWidth(120)
+		bt2.clicked.connect(self.upd2)
+		bt2.move(110, 75)
+
+		self.resize(300, 140)
 		self.center()
 		self.setWindowTitle('Check for Updates')
 		self.setFocus()
 		self.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
 
 	def upd(self):
-		webbrowser.open('https://github.com/Ryan-the-hito/Daisy/releases')
+		webbrowser.open('https://drive.google.com/drive/folders/1sqAwRH-3suDPkl_GV78qW_-BklWU20Ru?usp=drive_link')
 
 	def upd2(self):
-		webbrowser.open('https://pan.baidu.com/s/1i_OcI2MATC-cO1aqn06BRA?pwd=5f4y')
+		webbrowser.open('https://pan.baidu.com/s/1dW27Pi_Fi-BhyZTMTzBzag?pwd=75q3')
+
+	def upd3(self):
+		webbrowser.open('https://www.dropbox.com/scl/fo/nrn30qjqffsebrzlkxilv/h?rlkey=09vmwun931k3ugw0j1qd8njpa&dl=0')
 
 	def center(self):  # 设置窗口居中
 		qr = self.frameGeometry()
@@ -600,20 +646,6 @@ class window3(QWidget):  # 主窗口
 			resp = applescript.tell.app("System Events", """set myCommand to "shortcuts run \\"Brightness Alarm\\""
 			do shell script myCommand""")
 			assert resp.code == 0, resp.err
-			Brightness = int(float(resp.out)*100)
-			print(Brightness)
-			UseShortcut = codecs.open(BasePath + 'CertAction.txt', 'r', encoding='utf-8').read()
-			if UseShortcut == '1':
-				DarkShort = codecs.open(BasePath + 'DarkTime.txt', 'r', encoding='utf-8').read()
-				BrightShort = codecs.open(BasePath + 'BrightTime.txt', 'r', encoding='utf-8').read()
-				if Brightness < 20:
-					cmd = """set myCommand to "shortcuts run \\"%s\\""
-					do shell script myCommand""" % (DarkShort)
-					subprocess.call(['osascript', '-e', cmd])
-				if Brightness > 90:
-					cmd = """set myCommand to "shortcuts run \\"%s\\""
-					do shell script myCommand""" % (BrightShort)
-					subprocess.call(['osascript', '-e', cmd])
 
 	def activate(self):  # 设置窗口显示
 		if action3.isChecked():
@@ -637,7 +669,7 @@ class window4(QWidget):  # Customization settings
 
 	def initUI(self):  # 设置窗口内布局
 		self.setUpMainWindow()
-		self.setFixedSize(500, 200)
+		self.setFixedSize(500, 260)
 		self.center()
 		self.setWindowTitle('Customization settings')
 		self.setFocus()
@@ -651,23 +683,16 @@ class window4(QWidget):  # Customization settings
 		text = codecs.open(BasePath + 'SetTime.txt', 'r', encoding='utf-8').read()
 		self.le1.setText(text)
 
-		self.checkBox1 = QCheckBox('Run Shortcuts when too dark or too bright:', self)
-		self.checkBox1.setChecked(False)
-		self.checkBox1.clicked.connect(self.CertAction)
+		self.lbl2 = QLabel('The Pro version can customize brightness range and auto-adjust!👀🌼', self)
+		font = PyQt6.QtGui.QFont()
+		font.setBold(True)
+		self.lbl2.setFont(font)
 
-		self.lbl4 = QLabel('   ', self)
-		self.lbl2 = QLabel('When it is too dark: ', self)
-		self.le2 = QLineEdit(self)
-		self.le2.setPlaceholderText('The name of Shortcuts you use when dark')
-		text2 = codecs.open(BasePath + 'DarkTime.txt', 'r', encoding='utf-8').read()
-		self.le2.setText(text2)
-
-		self.lbl5 = QLabel('   ', self)
-		self.lbl3 = QLabel('When it is too bright: ', self)
-		self.le3 = QLineEdit(self)
-		self.le3.setPlaceholderText('The name of Shortcuts you use when bright')
-		text3 = codecs.open(BasePath + 'BrightTime.txt', 'r', encoding='utf-8').read()
-		self.le3.setText(text3)
+		l1 = QLabel(self)
+		png = PyQt6.QtGui.QPixmap(BasePath + 'propic.png')  # 调用QtGui.QPixmap方法，打开一个图片，存放在变量png中
+		l1.setPixmap(png)  # 在l1里面，调用setPixmap命令，建立一个图像存放框，并将之前的图像png存放在这个框框里。
+		l1.setFixedSize(460, 120)
+		l1.setScaledContents(True)
 
 		self.btn_1 = QPushButton('Save', self)
 		self.btn_1.clicked.connect(self.SetTime)
@@ -681,31 +706,19 @@ class window4(QWidget):  # Customization settings
 		vbox1.addStretch()
 		qw1.setLayout(vbox1)
 
-		qw3 = QWidget()
-		vbox3 = QHBoxLayout()
-		vbox3.setContentsMargins(0, 0, 0, 0)
-		vbox3.addWidget(self.lbl4)
-		vbox3.addWidget(self.lbl2)
-		vbox3.addWidget(self.le2)
-		qw3.setLayout(vbox3)
-
-		qw4 = QWidget()
-		vbox4 = QHBoxLayout()
-		vbox4.setContentsMargins(0, 0, 0, 0)
-		vbox4.addWidget(self.lbl5)
-		vbox4.addWidget(self.lbl3)
-		vbox4.addWidget(self.le3)
-		qw4.setLayout(vbox4)
+		qw5 = QWidget()
+		vbox5 = QHBoxLayout()
+		vbox5.setContentsMargins(0, 0, 0, 0)
+		vbox5.addWidget(self.lbl1)
+		vbox5.addWidget(self.le1)
+		qw5.setLayout(vbox5)
 
 		vbox2 = QVBoxLayout()
 		vbox2.setContentsMargins(20, 20, 20, 20)
-		vbox2.addWidget(self.lbl1)
-		vbox2.addWidget(self.le1)
-		vbox2.addStretch()
-		vbox2.addWidget(self.checkBox1)
-		vbox2.addWidget(qw3)
-		vbox2.addWidget(qw4)
+		vbox2.addWidget(qw5)
+		vbox2.addWidget(l1)
 		vbox2.addWidget(qw1)
+		vbox2.addWidget(self.lbl2)
 		self.setLayout(vbox2)
 	
 	def SetTime(self):
@@ -713,23 +726,7 @@ class window4(QWidget):  # Customization settings
 			SetTime = str(int(self.le1.text()))
 			with open(BasePath + "SetTime.txt", 'w', encoding='utf-8') as f0:
 				f0.write(SetTime)
-		if self.le2.text() != '':
-			DarkTime = str(self.le2.text())
-			with open(BasePath + "DarkTime.txt", 'w', encoding='utf-8') as f0:
-				f0.write(DarkTime)
-		if self.le3.text() != '':
-			BrightTime = str(self.le3.text())
-			with open(BasePath + "BrightTime.txt", 'w', encoding='utf-8') as f0:
-				f0.write(BrightTime)
 		self.close()
-
-	def CertAction(self):
-		if self.checkBox1.isChecked():
-			with open(BasePath + "CertAction.txt", 'w', encoding='utf-8') as f0:
-				f0.write('1')
-		if not self.checkBox1.isChecked():
-			with open(BasePath + "CertAction.txt", 'w', encoding='utf-8') as f0:
-				f0.write('0')
 	
 	def center(self):  # 设置窗口居中
 		qr = self.frameGeometry()
@@ -744,10 +741,6 @@ class window4(QWidget):  # Customization settings
 	def activate(self):  # 设置窗口显示
 		text = codecs.open(BasePath + 'SetTime.txt', 'r', encoding='utf-8').read()
 		self.le1.setText(text)
-		text2 = codecs.open(BasePath + 'DarkTime.txt', 'r', encoding='utf-8').read()
-		self.le2.setText(text2)
-		text3 = codecs.open(BasePath + 'BrightTime.txt', 'r', encoding='utf-8').read()
-		self.le3.setText(text3)
 
 		self.show()
 		self.setFocus()
