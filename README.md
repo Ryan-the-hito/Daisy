@@ -146,6 +146,8 @@ GPL-3.0 license
 
 ## 支持作者
 
+[Buy Me a Cup of Coffee](https://www.buymeacoffee.com/ryanthehito)
+
 <p align="center">
   <img src="https://i.imgur.com/OHHJD4y.png" width=240 />
   <img src="https://i.imgur.com/6XiKMAK.png" width=240 />
