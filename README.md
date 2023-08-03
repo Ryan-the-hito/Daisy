@@ -1,9 +1,9 @@
 # 🌼Daisy: Ambient Light Reminder and Auto-switcher
 ![DfHImWQ](https://i.imgur.com/DfHImWQ.png)
 
-[English](./README.md) | [简体中文](./README_cn.md)
+<p align="center"><a href="README.md">English</a> | <a href="README_cn.md">简体中文</a></p>
 
-[Telegram](https://t.me/+AODLypeF_aYwYjNh) | [Twitter](https://twitter.com/ryanswindows) | [Weibo](https://weibo.com/ryanthehitos)
+<p align="center"><a href="https://t.me/+AODLypeF_aYwYjNh">Telegram</a> | <a href="https://twitter.com/ryanswindows">Twitter</a> | <a href="https://weibo.com/ryanthehitos">Weibo</a></p>
 
 Daisy 是一个 macOS 上的 app，用来提醒用户环境光过明或过暗，以及（在 Pro 版本中）自动调节环境亮度，以达到护眼的目的。
 
@@ -29,7 +29,9 @@ Daisy 是一个 macOS 上的 app，用来提醒用户环境光过明或过暗，
   <img src="https://i.imgur.com/1Huutz9.png" width=400 />
 </p>
 
-Daisy 没有主界面，只有设置界面。在此界面中，第一行可设置 Daisy 每隔多少秒检测一次。默认设置为每 30 秒检测一次。第二个设置项可选，用户可自行决定是否打开运行快捷指令的选项。如果打开的话，那么 Daisy 就会在对应的情况下执行对应的快捷指令。用户应在对应情况后的栏目中写上对应快捷指令的名称。默认情况下，太暗情景下的指令为“DarkTime-BrightnessUp”，太亮情景下的则为“BrightTime-BrightnessDown”。如果修改这些设置，请记得点击 Save 保存设置。上文提到的指令集可以在下文获得默认模板。
+Daisy 没有主界面，只有设置界面。在此界面中，第一行可设置 Daisy 每隔多少秒检测一次。默认设置为每 30 秒检测一次。此功能为基本功能，免费版和付费版中均有包含。
+
+第二个和第三个设置项都是付费版内容。其中，第二个设置可以客制光线亮度的范围，决定临界值。第三个设置则是可选的，用户可自行决定是否打开运行快捷指令的选项。如果打开的话，那么 Daisy 就会在对应的情况下执行对应的快捷指令。用户应在对应情况后的栏目中写上对应快捷指令的名称。默认情况下，太暗情景下的指令为“DarkTime-BrightnessUp”，太亮情景下的则为“BrightTime-BrightnessDown”。如果修改这些设置，请记得点击 Save 保存设置。上文提到的指令集可以在下文获得默认模板。
 
 提醒时的界面：
 
@@ -62,6 +64,8 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
   <img src="https://i.imgur.com/MYBzu5S.png" width=400 />
   <img src="https://i.imgur.com/qAZo8rN.png" width=400 />
 </p>
+
+## DEMO
 
 ## 环境要求
 
@@ -111,7 +115,7 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
 
 直接将新版本的 .app 文件拖入软件文件夹（Application）即可。
 
-### 从免费版进阶成为付费版时
+### 从免费版进阶为付费版时
 
 同上，将付费版的 .app 文件拖入软件文件夹（Application）即可。
 
