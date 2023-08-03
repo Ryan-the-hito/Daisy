@@ -26,7 +26,7 @@ Daisy 是一个 macOS 上的 app，用来提醒用户环境光过明或过暗，
 ## 界面一览
 
 <p align="center">
-  <img src="https://i.imgur.com/hdPBMLE.png" width=400 />
+  <img src="https://i.imgur.com/1Huutz9.png" width=400 />
 </p>
 
 Daisy 没有主界面，只有设置界面。在此界面中，第一行可设置 Daisy 每隔多少秒检测一次。默认设置为每 30 秒检测一次。第二个设置项可选，用户可自行决定是否打开运行快捷指令的选项。如果打开的话，那么 Daisy 就会在对应的情况下执行对应的快捷指令。用户应在对应情况后的栏目中写上对应快捷指令的名称。默认情况下，太暗情景下的指令为“DarkTime-BrightnessUp”，太亮情景下的则为“BrightTime-BrightnessDown”。如果修改这些设置，请记得点击 Save 保存设置。上文提到的指令集可以在下文获得默认模板。
