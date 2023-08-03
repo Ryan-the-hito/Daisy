@@ -1,9 +1,9 @@
 # 🌼Daisy: Ambient Light Reminder and Auto-switcher
 ![DfHImWQ](https://i.imgur.com/DfHImWQ.png)
 
-[English](./README.md) | [简体中文](./README_cn.md)
+[English](./README_en.md) | 简体中文
 
-[Telegram](https://t.me/+AODLypeF_aYwYjNh) | [Twitter](https://twitter.com/ryanswindows) | [Weibo](https://weibo.com/ryanthehitos)
+[Telegram](https://t.me/+AODLypeF_aYwYjNh) | [Twitter](https://twitter.com/ryanswindows)
 
 Daisy 是一个 macOS 上的 app，用来提醒用户环境光过明或过暗，以及（在 Pro 版本中）自动调节环境亮度，以达到护眼的目的。
 
@@ -49,20 +49,6 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
   <img src="https://i.imgur.com/6OsBRWb.png" width=400 />
 </p>
 
-免费版和付费版的“设置”（Settings）板块：
-
-<p align="center">
-  <img src="https://i.imgur.com/hiy7G6L.png" width=400 />
-  <img src="https://i.imgur.com/1Huutz9.png" width=400 />
-</p>
-
-免费版和付费版的“关于”（About）板块：
-
-<p align="center">
-  <img src="https://i.imgur.com/MYBzu5S.png" width=400 />
-  <img src="https://i.imgur.com/qAZo8rN.png" width=400 />
-</p>
-
 ## 环境要求
 
 - MacOS 12 Monterey 及以上（测试环境为 MacOS 12.6.5）
@@ -88,16 +74,8 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
    打开之后，电脑屏幕的亮度就会自动地由系统管理，因此不建议手动调整电脑屏幕，而是通过调整环境光的角度和亮度来实现良好的办公环境。许多用户因为自动亮度太低而是手动拉高屏幕亮度值，但是这恰恰是伤眼的——这说明用户此时身处一个环境光较暗的空间，但是相反却使用较高亮度的屏幕，对眼睛的压力会更大。除非特殊情况，否则将屏幕亮度调至低于 20% 或高于 90% 同样会触发 Daisy 检测。简言之，Daisy 认为，屏幕亮度不当和环境光不当都会对眼睛产生负面影响，然而改变这一状况，主要应从改变环境光入手；
 3. **第三步：提醒指令（免费版和付费版都需要）**：打开快捷指令（Shortcuts），安装此快捷指令[Brightness Alarm](https://www.icloud.com/shortcuts/a5b22d5cbba741b7ba15e837106a3924)，**请不要改动这一快捷指令中的内容，也不要改动其名称**。安装完此指令后可以实现基本功能；
 4. **第四步：明暗指令（仅付费版）**：同上，打开快捷指令，然后安装太暗情况下的快捷指令[DarkTime-BrightnessUp](https://www.icloud.com/shortcuts/a44e83dc08c645298b239ae92eebff5a)，以及太亮情况下的快捷指令[BrightTime-BrightnessDown](https://www.icloud.com/shortcuts/4feeccf198544951b68b0da8acc8b2af)。这两个指令的内容结构有细微差别，都需要用户自定义修改。受限于快捷指令的功能，用户需要在每一个“Set Multiple accessories”的地方手动选择自己需要调整的设备，然后对应地调整其亮度。调整亮度的规则是：如果是 DarkTime-BrightnessUp 这个指令集，在每个 if 情况中，都将目标亮度设置为范围最大值加上 10% 的数字。例如，在“If Brightness is between 11 and 20”这个 if 命令中，设备的亮度应手动拖至 30%，这样就可将亮度在 11%-20% 之间的环境光设备调高 10%-20%，至 30%。相反，如果是 BrightTime-BrightnessDown 这个指令集，那么在每个 if 指令中，设备的亮度应该调整至范围最小值减去 10%（或 11%，根据情况）的数字。又如，在“f Brightness is between 21 and 30”命令中，设备的亮度应手动拖至 10%。效果刚好是相反的。如此，我们就实现了一个最多以 20% 为一阶的亮度调整组合。如果用户想实现更加细致的调整，也可以在此基础上增加更多 if 条件和命令，只是更复杂一点而已。在安装和自定义完此指令后，Daisy 的所有功能就都可以实现了。
-5. **第五步：客制调整（仅付费版）**：如有修改 20-90 这一亮度区间的需求，Pro 用户可以在设置中手动更改这一数值，另外，**请务必记得前往[Brightness Alarm](https://www.icloud.com/shortcuts/a5b22d5cbba741b7ba15e837106a3924)中更改对应的数值**。修改时请注意，在 Daisy 软件中使用的是整数，而在快捷指令中使用的是百分比小数。
 
 ## 使用说明
-
-### 打开时
-首次启动时，macOS 将弹出警告，因为 Daisy 不是通过 App Store 分发的软件，因此会有这样的警告，请同意。
-
-<p align="center">
-  <img src="https://i.imgur.com/nH5upbA.png" width=400 />
-</p>
 
 启动 Daisy，Mac 将弹出以下权限提醒，请选择 OK。
 
@@ -106,14 +84,6 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
 </p>
 
 接着在任务栏里面访问 Daisy，点击图标，弹出下拉框，选择第一项“Switch on Daisy!”即可启动 Daisy。启动时第一栏前面会有一个小勾，如果需要临时取消，那么也可以再点击一下，当勾消失之后即停止 Daisy。
-
-### 更新时
-
-直接将新版本的 .app 文件拖入软件文件夹（Application）即可。
-
-### 从免费版进阶成为付费版时
-
-同上，将付费版的 .app 文件拖入软件文件夹（Application）即可。
 
 ## 注意事项
 
@@ -126,7 +96,6 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
 
 3. 关于手动调节，即便开启了根据环境亮度调节亮度，MacBook 也会尊重你的手动调节，因此这里没有非此不可的正确答案，用户尽可以在打开根据亮度调节后，在当前自己认为眼睛最舒适的环境中确定一个亮度锚点，此后环境光亮度变化而引发的设备亮度变化都将围绕这个锚点上下波动。Daisy 也会根据这个值来执行自动指令。
 4. 关于五阶的亮度，其实并非完全地每 20 度分一阶。建议的做法是在亮度升高和亮度降低两个指令集中错开 10 度。这样可以避免环境灯在固定的五阶上来回摆动，无法调至其他亮度。例如，若不错开地排布，那么亮度只会在 0、20、40、60、80 和 100 之间变化，自动指令就无法调至 50 度。而如果错开 10 度，那么亮度可以先从 40 升高至 60，然后再降至 50，可确保更多选项。
-5. 如果在安装下载快捷指令时出现“Can't connect to the Gallery.”（无法连接到“快捷指令中心”）的字样，虽然很有可能是用户的网络和软件设置存在故障，但亦有可能是苹果服务器的问题。后者也曾经发生过，因此如遇此情况，只能等待苹果修复服务器连接才能继续。在这段时间内，如果用户着急想要获取快捷指令的内容，可以通过邮件或本页上部的各种联系方式和开发者取得联系，开发者可以发送快捷指令截图，辅助用户自行创建快捷指令。
 
 ## 证书信息
 

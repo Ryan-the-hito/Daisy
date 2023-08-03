@@ -697,12 +697,18 @@ class window4(QWidget):  # Customization settings
 		self.btn_1 = QPushButton('Save', self)
 		self.btn_1.clicked.connect(self.SetTime)
 		self.btn_1.setFixedSize(150, 20)
+
+		self.btn_2 = QPushButton('Upgrade to Pro', self)
+		self.btn_2.clicked.connect(self.upgrade)
+		self.btn_2.setFont(font)
+		self.btn_2.setFixedSize(150, 20)
 		
 		qw1 = QWidget()
 		vbox1 = QHBoxLayout()
 		vbox1.setContentsMargins(0, 0, 0, 0)
 		vbox1.addStretch()
 		vbox1.addWidget(self.btn_1)
+		vbox1.addWidget(self.btn_2)
 		vbox1.addStretch()
 		qw1.setLayout(vbox1)
 
@@ -727,6 +733,9 @@ class window4(QWidget):  # Customization settings
 			with open(BasePath + "SetTime.txt", 'w', encoding='utf-8') as f0:
 				f0.write(SetTime)
 		self.close()
+
+	def upgrade(self):
+		webbrowser.open('https://www.buymeacoffee.com/ryanthehito/e/155171')
 	
 	def center(self):  # 设置窗口居中
 		qr = self.frameGeometry()
