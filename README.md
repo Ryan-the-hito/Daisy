@@ -82,7 +82,7 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/fd4c2fc9-f1a2-4199-9576-c
 | 基本功能 |1. 环境光过暗或者过亮时提醒<br>2. 设置自动检测环境光的间隔时间 | 1. 环境光过暗或者过亮时提醒<br>2. 设置自动检测环境光的间隔时间|
 | 高级功能 | 无 | 3. 自定义过暗和过亮的亮度范围<br>4. 过暗或者过亮时自动执行快捷指令，自动调节 Home 中的智能灯亮度|
 | 价格 | 免费                        | $1（只要一美元哦）      |
-| 获取 | [Github Releases](https://github.com/Ryan-the-hito/Daisy/releases)  | [点击购买](https://www.buymeacoffee.com/ryanthehito/e/155171) |
+| 获取 | [Github Releases](https://github.com/Ryan-the-hito/Daisy/releases)<br>[Google Drive](https://drive.google.com/drive/folders/1sqAwRH-3suDPkl_GV78qW_-BklWU20Ru?usp=drive_link)<br>[Baidu Netdisk](https://pan.baidu.com/s/1dW27Pi_Fi-BhyZTMTzBzag?pwd=75q3)<br>[Dropbox](https://www.dropbox.com/scl/fo/nrn30qjqffsebrzlkxilv/h?rlkey=09vmwun931k3ugw0j1qd8njpa&dl=0)  | [点击购买](https://www.buymeacoffee.com/ryanthehito/e/155171) |
 
 ## 下载安装
 
