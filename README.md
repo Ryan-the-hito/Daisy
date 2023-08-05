@@ -62,8 +62,8 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
 免费版和付费版的“关于”（About）板块：
 
 <p align="center">
-  <img src="https://i.imgur.com/MYBzu5S.png" width=400 />
-  <img src="https://i.imgur.com/qAZo8rN.png" width=400 />
+  <img src="https://i.imgur.com/p39Zcwd.png" width=400 />
+  <img src="https://i.imgur.com/36aBGkT.png" width=400 />
 </p>
 
 ## DEMO
