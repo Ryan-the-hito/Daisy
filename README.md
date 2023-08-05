@@ -68,7 +68,7 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
 
 ## DEMO
 
-https://github.com/Ryan-the-hito/Daisy/assets/95213517/fd4c2fc9-f1a2-4199-9576-cb6809f4ab1c
+https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a44f867e5f2e
 
 ## 环境要求
 
