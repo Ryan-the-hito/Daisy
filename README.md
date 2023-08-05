@@ -1,5 +1,6 @@
 # 🌼Daisy: Ambient Light Reminder and Auto-switcher
-![DfHImWQ](https://i.imgur.com/DfHImWQ.png)
+
+![65ldrAT](https://i.imgur.com/65ldrAT.png)
 
 <p align="center"><a href="README.md">English</a> | <a href="README_cn.md">简体中文</a></p>
 
