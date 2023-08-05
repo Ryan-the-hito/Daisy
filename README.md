@@ -141,8 +141,7 @@ GPL-3.0 license
 
 ## 特别致谢
 
-1. [Qt](https://github.com/qt)
-2. [alcor / emoji-supply](https://github.com/alcor/emoji-supply)
+1. [Qt](https://github.com/qt)：本软件遵循 Qt 的开源协议。
 
 ## 支持作者
 
