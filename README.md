@@ -24,7 +24,7 @@ Just like all reminder tools, Daisy's primary function is to remind users when t
 
 If the user has smart devices, such as a smart desk lamp for lighting, they can connect it to Home. Daisy can also issue commands through Shortcuts to adjust the brightness of this smart device: when the ambient light is dim, increase the brightness of the device by 10%-20%, and vice versa.
 
-## 界面一览
+## Interface
 
 <p align="center">
   <img src="https://i.imgur.com/1Huutz9.png" width=400 />
@@ -76,7 +76,7 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a
 - M1, M2 chips
 - Network environment (for installing shortcuts)
 
-## 类型价目
+## Pricing
 
 |      | Free                      | Pro                      |
 |------|-----------------------------|-----------------------------|
@@ -85,12 +85,10 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a
 | Price | Free                        | $1（Only for 1 buck）      |
 | Get | [Github Releases](https://github.com/Ryan-the-hito/Daisy/releases)<br>[Google Drive](https://drive.google.com/drive/folders/1sqAwRH-3suDPkl_GV78qW_-BklWU20Ru?usp=drive_link)<br>[Baidu Netdisk](https://pan.baidu.com/s/1dW27Pi_Fi-BhyZTMTzBzag?pwd=75q3)<br>[Dropbox](https://www.dropbox.com/scl/fo/nrn30qjqffsebrzlkxilv/h?rlkey=09vmwun931k3ugw0j1qd8njpa&dl=0)  | [Click to buy](https://www.buymeacoffee.com/ryanthehito/e/155171) |
 
+## Installation
 
-
-## 下载安装
-
-1. **第一步：下载软件**：从 Release 中下载软件的压缩文件，解压后拖至系统程序文件夹；
-2. **第二步：设置检测**：打开系统设置（System Preferences 或者 System Settings），在显示（Display）板块，勾选自动调整亮度的功能，如下图所示：
+1. **Step 1: Download the software**: Download the compressed file, unzip it and drag it to the software folder (Application).
+2. **Step 2: Setting up detection**: Open system settings (System Preferences or System Settings), go to the Display section, and check the option for "Automatically adjust brightness" as shown in the following image:
    <p align="center">
 	<img src="https://i.imgur.com/TPa11q3.png" width=400 />
 	</p>
@@ -100,30 +98,31 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a
 5. **第五步：客制调整（仅付费版）**：如有修改 20-90 这一亮度区间的需求，Pro 用户可以在设置中手动更改这一数值，另外，**请务必记得前往[Brightness Alarm](https://www.icloud.com/shortcuts/a5b22d5cbba741b7ba15e837106a3924)中更改对应的数值**。修改时请注意，在 Daisy 软件中使用的是整数，而在快捷指令中使用的是百分比小数。
 6. **第六步：开始使用**：在设置完了以上内容后，选上 Switch on Daisy! 边上的小勾，即可开始使用！
 
-## 使用说明
+## Instructions for use
 
-### 打开时
-首次启动时，macOS 将弹出警告，因为 Daisy 不是通过 App Store 分发的软件，因此会有这样的警告，请同意。
+### When opening
+
+When it starts for the first time, macOS will pop up a warning, because Daisy is not the software distributed through the App Store, so there will be such a warning. Please agree.
 
 <p align="center">
   <img src="https://i.imgur.com/nH5upbA.png" width=400 />
 </p>
 
-启动 Daisy，Mac 将弹出以下权限提醒，请选择 OK。
+Start Daisy, Mac will pop up the following permission prompt, please select OK.
 
 <p align="center">
   <img src="https://i.imgur.com/ROzbYpM.png" width=400 />
 </p>
 
-接着在任务栏里面访问 Daisy，点击图标，弹出下拉框，选择第一项“Switch on Daisy!”即可启动 Daisy。启动时第一栏前面会有一个小勾，如果需要临时取消，那么也可以再点击一下，当勾消失之后即停止 Daisy。
+Next, access Daisy in the taskbar, click on the icon, and a dropdown menu will appear. Select the first option "Switch on Daisy!" to start Daisy. There will be a small checkmark in front of the first column when it is launched. If you need to temporarily cancel it, you can also click again. Once the checkmark disappears, Daisy will stop running.
 
-### 更新时
+### When updating
 
-直接将新版本的 .app 文件拖入软件文件夹（Application）即可。
+Simply drag the new version's .app file into the software folder (Application).
 
-### 从免费版进阶为付费版时
+### When upgrading from the free version to the Pro version
 
-同上，将付费版的 .app 文件拖入软件文件夹（Application）即可。
+Same as above, just drag the Pro version's .app file into the software folder (Application).
 
 ## 注意事项
 

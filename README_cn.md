@@ -87,8 +87,8 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a
 
 ## 下载安装
 
-1. **第一步：下载软件**：从 Release 中下载软件的压缩文件，解压后拖至系统程序文件夹；
-2. **第二步：设置检测**：打开系统设置（System Preferences 或者 System Settings），在显示（Display）板块，勾选自动调整亮度的功能，如下图所示：
+1. **第一步：下载软件**：从发布页面中下载软件的压缩文件，解压后将其拖放到软件文件夹（Application）中；
+2. **第二步：设置检测**：打开系统设置（System Preferences 或者 System Settings），在显示（Display）选项卡中勾选自动调整亮度的功能，如下图所示：
    <p align="center">
 	<img src="https://i.imgur.com/TPa11q3.png" width=400 />
 	</p>
@@ -113,13 +113,13 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a
   <img src="https://i.imgur.com/ROzbYpM.png" width=400 />
 </p>
 
-接着在任务栏里面访问 Daisy，点击图标，弹出下拉框，选择第一项“Switch on Daisy!”即可启动 Daisy。启动时第一栏前面会有一个小勾，如果需要临时取消，那么也可以再点击一下，当勾消失之后即停止 Daisy。
+在任务栏中找到Daisy的图标，点击它后会弹出一个下拉框。选择第一项“Switch on Daisy!”即可启动Daisy。启动时，在第一栏前面会显示一个小勾号。如果需要临时取消Daisy的运行，再次点击该选项即可，当勾号消失后表示Daisy已停止运行。
 
 ### 更新时
 
 直接将新版本的 .app 文件拖入软件文件夹（Application）即可。
 
-### 从免费版进阶为付费版时
+### 从免费版升级为付费版时
 
 同上，将付费版的 .app 文件拖入软件文件夹（Application）即可。
 
