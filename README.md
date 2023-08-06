@@ -22,7 +22,7 @@ Just like all reminder tools, Daisy's primary function is to remind users when t
 
 ### Automatic Adjustment of Ambient Light (Pro feature)：
 
-如果用户还有智能设备——例如作为照明的智能台灯，用户可将其接入 Home，Daisy 还可以通过快捷指令（Shortcuts）发出指令，调整该智能设备的亮度：当环境光较暗时，将该设备的亮度调高 10%-20%，反之亦然。
+If the user has smart devices, such as a smart desk lamp for lighting, they can connect it to Home. Daisy can also issue commands through Shortcuts to adjust the brightness of this smart device: when the ambient light is dim, increase the brightness of the device by 10%-20%, and vice versa.
 
 ## 界面一览
 
@@ -30,36 +30,36 @@ Just like all reminder tools, Daisy's primary function is to remind users when t
   <img src="https://i.imgur.com/1Huutz9.png" width=400 />
 </p>
 
-Daisy 没有主界面，只有设置界面。在此界面中，第一行可设置 Daisy 每隔多少秒检测一次。默认设置为每 30 秒检测一次。此功能为基本功能，免费版和付费版中均有包含。
+Daisy does not have a main interface, only a settings interface. In this interface, the first line allows you to set how often Daisy should check for updates. By default, this is set to occur every 30 seconds. This feature is included in both the free and Pro versions as a basic function.
 
-第二个和第三个设置项都是付费版内容。其中，第二个设置可以客制光线亮度的范围，决定临界值。第三个设置则是可选的，用户可自行决定是否打开运行快捷指令的选项。如果打开的话，那么 Daisy 就会在对应的情况下执行对应的快捷指令。用户应在对应情况后的栏目中写上对应快捷指令的名称。默认情况下，太暗情景下的指令为“DarkTime-BrightnessUp”，太亮情景下的则为“BrightTime-BrightnessDown”。如果修改这些设置，请记得点击 Save 保存设置。上文提到的指令集可以在下文获得默认模板。
+The second and third settings are only available in the Pro version. The second setting allows you to customize the brightness range by determining a critical value. The third setting is optional, allowing users to choose whether or not to enable shortcuts for specific situations. If enabled, Daisy will execute the corresponding shortcut based on the situation. Users should write the names of their desired shortcuts in the column next to each situation. By default, "DarkTime-BrightnessUp" is assigned as the shortcut for dark scenes and "BrightTime-BrightnessDown" is assigned for bright scenes. Remember to click Save after modifying these settings. The mentioned shortcuts can be found in the default templates provided below.
 
-提醒时的界面：
+Reminder interface:
 
 <p align="center">
   <img src="https://i.imgur.com/8CrVApk.png" width=400 />
 </p>
 
-如果开启了自动调节的话，那么 Daisy 不仅会提醒亮度，还会在调整环境灯亮度前后发出提醒：
+If automatic adjustment is enabled, Daisy will not only remind you of the brightness but also give reminders before and after adjusting the ambient light:
 
 <p align="center">
   <img src="https://i.imgur.com/KThHm7N.png" width=400 />
 </p>
 
-在我电脑上运行约 24 小时后的耗电情况（挺节能的，耗电很少）：
+After running on my computer for about 24 hours, the power consumption is very low:
 
 <p align="center">
   <img src="https://i.imgur.com/6OsBRWb.png" width=400 />
 </p>
 
-免费版和付费版的“设置”（Settings）板块：
+The "Settings" section of the free version and Pro version:
 
 <p align="center">
   <img src="https://i.imgur.com/hiy7G6L.png" width=400 />
   <img src="https://i.imgur.com/1Huutz9.png" width=400 />
 </p>
 
-免费版和付费版的“关于”（About）板块：
+The "About" section of the free version and Pro version:
 
 <p align="center">
   <img src="https://i.imgur.com/p39Zcwd.png" width=400 />
@@ -70,20 +70,22 @@ Daisy 没有主界面，只有设置界面。在此界面中，第一行可设�
 
 https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a44f867e5f2e
 
-## 环境要求
+## Environment Requirements
 
-- MacOS 12 Monterey 及以上（测试环境为 MacOS 12.6.5）
-- M1、M2 芯片
-- 网络环境自理
+- MacOS 12 Monterey or above (test environment is MacOS 12.6.5)
+- M1, M2 chips
+- Network environment (for installing shortcuts)
 
 ## 类型价目
 
-|      | 免费版                      | 付费版                      |
+|      | Free                      | Pro                      |
 |------|-----------------------------|-----------------------------|
-| 基本功能 |1. 环境光过暗或者过亮时提醒<br>2. 设置自动检测环境光的间隔时间 | 1. 环境光过暗或者过亮时提醒<br>2. 设置自动检测环境光的间隔时间|
-| 高级功能 | 无 | 3. 自定义过暗和过亮的亮度范围<br>4. 过暗或者过亮时自动执行快捷指令，自动调节 Home 中的智能灯亮度|
-| 价格 | 免费                        | $1（只要一美元哦）      |
-| 获取 | [Github Releases](https://github.com/Ryan-the-hito/Daisy/releases)<br>[Google Drive](https://drive.google.com/drive/folders/1sqAwRH-3suDPkl_GV78qW_-BklWU20Ru?usp=drive_link)<br>[Baidu Netdisk](https://pan.baidu.com/s/1dW27Pi_Fi-BhyZTMTzBzag?pwd=75q3)<br>[Dropbox](https://www.dropbox.com/scl/fo/nrn30qjqffsebrzlkxilv/h?rlkey=09vmwun931k3ugw0j1qd8njpa&dl=0)  | [点击购买](https://www.buymeacoffee.com/ryanthehito/e/155171) |
+| Basic functions |1. Remind if the ambient light is too dark or too bright<br>2. Set the intervals for automatically detecting the ambient light. | 1. Remind if the ambient light is too dark or too bright<br>2. Set the intervals for automatically detecting the ambient light.|
+| Pro features | None | 3. Customize the brightness range for too dark and too bright.<br>4. Automatically execute shortcuts when it is too dark or too bright and adjust the brightness of smart lights in Home.|
+| Price | Free                        | $1（Only for 1 buck）      |
+| Get | [Github Releases](https://github.com/Ryan-the-hito/Daisy/releases)<br>[Google Drive](https://drive.google.com/drive/folders/1sqAwRH-3suDPkl_GV78qW_-BklWU20Ru?usp=drive_link)<br>[Baidu Netdisk](https://pan.baidu.com/s/1dW27Pi_Fi-BhyZTMTzBzag?pwd=75q3)<br>[Dropbox](https://www.dropbox.com/scl/fo/nrn30qjqffsebrzlkxilv/h?rlkey=09vmwun931k3ugw0j1qd8njpa&dl=0)  | [Click to buy](https://www.buymeacoffee.com/ryanthehito/e/155171) |
+
+
 
 ## 下载安装
 
