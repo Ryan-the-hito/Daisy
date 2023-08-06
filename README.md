@@ -2,25 +2,25 @@
 
 ![65ldrAT](https://i.imgur.com/65ldrAT.png)
 
-<p align="center"><a href="README.md">English</a> | <a href="README_cn.md">简体中文</a></p>
+<p align="center">English | <a href="README_cn.md">简体中文</a></p>
 
 <p align="center"><a href="https://t.me/+AODLypeF_aYwYjNh">Telegram</a> | <a href="https://twitter.com/ryanswindows">Twitter</a> | <a href="https://weibo.com/ryanthehitos">Weibo</a></p>
 
-Daisy 是一个 macOS 上的 app，用来提醒用户环境光过明或过暗，以及（在 Pro 版本中）自动调节环境亮度，以达到护眼的目的。
+Daisy is an app for macOS that alerts the user that the ambient light is too bright or too dim, and (in the Pro version) automatically adjusts the ambient brightness for eye protection.
 
-## 解决问题
+## Problems to Solve
 
-对于长期需要对着电脑屏幕的人群来说，护眼是一个非常急切，也是名目繁多的议题。除了系统自带的 Night Shift、True Tone，第三方软件还能监测用眼时间、冷暖光调整、屏幕亮度调整、明暗主题调整……在这些众多功能中，我自己的使用感受是：**护眼的重点可能不在“明暗主题”或者“冷暖色调”，而在于两点，一是用眼时间，二是环境光线**。那么是不是说明暗与冷暖的功能完全没有利好呢？倒也不是。冷暖比较好理解，但是市面上也有带过滤功能的屏幕膜，做到硬件级的 24 小时过滤，软件端的似乎不那么必要。若不谈这些产品是否真正有效，另一个影响因素是，改变冷暖光影响了屏幕显色。对于时常需要摄影和修图的人来说，这反而增加了日常困难。至于明暗主题，我个人觉得其初衷未必是护眼。暗主题深色底配白字，确实是显得屏幕上的文字更清晰了，但是稍微看一段时间，眼睛就会花，字会糊在一起……更清晰的代价可能是用眼更费劲。所以，要实现生活需求和护眼需求的平衡，一方面是减少用眼时间，另一方面其实主要是保证环境光不至于太暗或者太亮，使单位时间内用眼更轻松。而后者似乎没有什么软件产品，因此我打算做一个这样的产品。
+Eye protection is a pressing concern for individuals who spend extended periods of time in front of computer screens. In addition to features like Night Shift and True Tone, third-party software can also monitor eye time and adjust color temperature, brightness and theme. **However, I believe that the primary focus of eye protection should be on managing eye time and optimizing ambient light brightness rather than solely focusing on themes or color temperatures.** Are theme and color temperature not favorable? Not necessarily. Regarding color temperature, there are screen films with filtration functions that can achieve 24-hour hardware-level filtration, making software adjustments less necessary. Another factor to consider is that color temperature affects display accuracy, which poses challenges for those who engage in photography and retouching regularly. I believe that the original intention of light and dark themes may not be for eye protection. The dark theme, which features a dark background with white characters, does make the text on the screen appear clearer. However, constantly looking at the screen can cause eye fatigue. Increased clarity can also strain the eyes further. To achieve a balance between our needs and eye protection, it is important to limit the amount of time spent using our eyes and ensure that the ambient light is neither too dark nor too bright. Since there are no software products available for now, I plan to create one.
 
-另一个动因是，Mac 上已经有一些成熟的第三方噪音检测软件，可以提示使用者是否暴露在较大噪音的环境。我之前也写过一个软件——[Cherry](https://github.com/Ryan-the-hito/Cherry)，用来调整系统音量高低变化，防止声音过高或者过低。声音方面尚兼有针对环境和系统的产品，但是在光线管理方面，几乎很少见到针对环境的工具。f.lux 确实有环境光管理，只不过那还是调整环境光的冷暖，而不是亮度。我希望这个产品能一方面吸取提醒类工具的长项，另一方面稍微补足光线管理在环境自动化领域的应用。
+Another motive is that there are already some mature third-party noise detection software on Mac, which can prompt users whether they are exposed to a noisy environment. I have previously written a software called [Cherry](https://github.com/Ryan-the-hito/Cherry) to adjust the system volume changes to prevent the sound from being too loud or too low. Although there are products that focus on sound management for the environment and the system, there are rarely tools specifically designed for light management. [f.lux](https://justgetflux.com/) does have ambient light management, but it adjusts the warmth of the ambient light rather than the brightness. I hope this product can learn from the strengths of reminder tools and also enhance the application of light management.
 
-## 功能亮点
+## Functions
 
-### 环境光提醒（基本功能）：
+###  Ambient Brightness Reminder (basic function)：
 
-正如所有提醒类软件一样，Daisy 的首要功能是在环境光太暗和太亮的时候提醒用户。Mac 在很多机型上设有环境光传感器。但是 Daisy 没有通过这个方式获取环境光亮度。Daisy 的目的不是干掉其他软件和系统功能，而是希望和其他功能一起运行。macOS 如果内置了跟随环境光自动调节亮度，那么用户可以首先多一个“根据环境光自动调节屏幕亮度的功能”。但是系统的功能不具备提醒功能，仅仅是调整亮度。因此，Daisy 将太暗被设置为 20% 的屏幕亮度，太亮则是 90%。如果随环境光变化的屏幕亮度低于 20% 或者高于90%，那么会触发 Daisy，提醒用户根据现有情况调整环境光线的强度。
+Just like all reminder tools, Daisy's primary function is to remind users when the ambient light is too dim or too bright. Mac has ambient light sensors on many models. However, Daisy does not obtain ambient light brightness through the native method. Instead, it operates alongside other software and system functions. Usually macOS has a built-in feature to automatically adjust screen brightness based on ambient light, so users can firstly enable "Automatically adjust brightness". However, this system function does not include a reminder feature like Daisy does. Therefore, Daisy defines "too dim" as 20% screen brightness and "too bright" as 90%. If the screen brightness, which changes with ambient light, falls below 20% or exceeds 90%, Daisy will be triggered to remind users to adjust ambient light according to the current situation.
 
-### 自动调节环境光（高级功能）：
+### Automatic Adjustment of Ambient Light (Pro feature)：
 
 如果用户还有智能设备——例如作为照明的智能台灯，用户可将其接入 Home，Daisy 还可以通过快捷指令（Shortcuts）发出指令，调整该智能设备的亮度：当环境光较暗时，将该设备的亮度调高 10%-20%，反之亦然。
 
