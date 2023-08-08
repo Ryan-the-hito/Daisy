@@ -85,6 +85,15 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a
 | 价格 | 免费                        | $1（只要一美元哦）      |
 | 获取 | [Github Releases](https://github.com/Ryan-the-hito/Daisy/releases)<br>[Google Drive](https://drive.google.com/drive/folders/1sqAwRH-3suDPkl_GV78qW_-BklWU20Ru?usp=drive_link)<br>[Baidu Netdisk](https://pan.baidu.com/s/1dW27Pi_Fi-BhyZTMTzBzag?pwd=75q3)<br>[Dropbox](https://www.dropbox.com/scl/fo/nrn30qjqffsebrzlkxilv/h?rlkey=09vmwun931k3ugw0j1qd8njpa&dl=0)  | [点击购买](https://www.buymeacoffee.com/ryanthehito/e/155171) |
 
+购买与支付说明：
+
+本软件将通过 Buy me a coffee 销售，以下为订购界面示意图，购买者需提供称呼和邮箱地址，并通过银行卡或 link 付款，支付一次即获得 Pro 版软件包，可多安装于多个设备。作为独立开发者，我由衷地感谢所有支持者对开源付费软件的支持和认可。
+
+<p align="center">
+  <img src="https://i.imgur.com/cMrTPxi.png" width=400 />
+  <img src="https://i.imgur.com/xdsznlL.png" width=400 />
+</p>
+
 ## 下载安装
 
 1. **第一步：下载软件**：从发布页面中下载软件的压缩文件，解压后将其拖放到软件文件夹（Application）中；
@@ -125,8 +134,9 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a
 
 ## 注意事项
 
-1. 如果电脑合盖的话，一般来说，电脑会自动熄屏上锁，因此 Daisy 会检测到这一种情况，并停止检测——否则，解锁后会发现一大堆灯光提醒。但是**如果使用者个人设置合盖不熄屏的话**——很多人用第三方软件设置这个功能——那么 Daisy 肯定会一直检测环境光，而合盖后的环境光可能会非常差，因此会弹出很多提醒，如果关联了快捷指令，那么也可能会不断触发外部指令。因此，如果有类似的需求，**希望使用者在合盖之前停止 Daisy 的检测，在下次开始开盖后打开即可**。
-2. 如果出现了下图所示的提示，表示 Daisy 没法通过 Shortcuts 指示 Home 中绑定的智能设备。但是不必担心，这时候**只需打开 Home 软件等待自动连接更新状态即可**，这可能是由于苹果 Home 连接上的一些问题。
+1. 本软件无中文界面，并郑重声明不在中华人民共和国境内从事互联网信息服务，过去从未，现在没有，未来绝不。本软件所有宣传、说明和支付渠道均符合所在国和平台法规。
+2. 如果电脑合盖的话，一般来说，电脑会自动熄屏上锁，因此 Daisy 会检测到这一种情况，并停止检测——否则，解锁后会发现一大堆灯光提醒。但是**如果使用者个人设置合盖不熄屏的话**——很多人用第三方软件设置这个功能——那么 Daisy 肯定会一直检测环境光，而合盖后的环境光可能会非常差，因此会弹出很多提醒，如果关联了快捷指令，那么也可能会不断触发外部指令。因此，如果有类似的需求，**希望使用者在合盖之前停止 Daisy 的检测，在下次开始开盖后打开即可**。
+3. 如果出现了下图所示的提示，表示 Daisy 没法通过 Shortcuts 指示 Home 中绑定的智能设备。但是不必担心，这时候**只需打开 Home 软件等待自动连接更新状态即可**，这可能是由于苹果 Home 连接上的一些问题。
 
 <p align="center">
   <img src="https://i.imgur.com/i3rFp5l.png" width=400 />

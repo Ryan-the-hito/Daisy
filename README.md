@@ -85,6 +85,25 @@ https://github.com/Ryan-the-hito/Daisy/assets/95213517/e44db030-bf11-4b85-bd54-a
 | Price | Free                        | $1（Only for 1 buck）      |
 | Get | [Github Releases](https://github.com/Ryan-the-hito/Daisy/releases)<br>[Google Drive](https://drive.google.com/drive/folders/1sqAwRH-3suDPkl_GV78qW_-BklWU20Ru?usp=drive_link)<br>[Baidu Netdisk](https://pan.baidu.com/s/1dW27Pi_Fi-BhyZTMTzBzag?pwd=75q3)<br>[Dropbox](https://www.dropbox.com/scl/fo/nrn30qjqffsebrzlkxilv/h?rlkey=09vmwun931k3ugw0j1qd8njpa&dl=0)  | [Click to buy](https://www.buymeacoffee.com/ryanthehito/e/155171) |
 
+
+Purchase and Payment Instructions:
+
+To purchase this software, please follow the instructions below:
+
+1. Visit the (Buy me a coffee link)[https://www.buymeacoffee.com/ryanthehito/e/155171].
+2. Fill in your name and email address in the provided fields.
+3. Choose your preferred payment method: bank card or link.
+4. Complete the payment process.
+5. Upon successful payment, you will receive the Pro version software package.
+6. The software package can be installed on multiple devices.
+
+Thank you for your support and recognition of open-source paid software. As an independent developer, I deeply appreciate the encouragement from all supporters.
+
+<p align="center">
+  <img src="https://i.imgur.com/cMrTPxi.png" width=400 />
+  <img src="https://i.imgur.com/xdsznlL.png" width=400 />
+</p>
+
 ## Installation
 
 1. **Step 1: Download the software**: Download the compressed file, unzip it and drag it to the software folder (Application).
@@ -126,8 +145,9 @@ Same as above, just drag the Pro version's .app file into the software folder (A
 
 ## Notice
 
-1. Generally, when the computer is closed, it will automatically turn off and lock the screen. Daisy detects this and stops detecting light to avoid unnecessary reminders upon unlocking. **However, if the user has manually disabled the screen turning off feature using third-party software**, Daisy will continue to detect ambient light even when the lid is closed. This may result in multiple reminders due to poor lighting conditions. Additionally, if there are associated shortcut commands, external instructions may be triggered repeatedly. **Therefore, if you have a similar requirement, please remember to disable Daisy's detection before closing the lid and enable it again afterwards**.
-2. If you see the alert shown in the figure below, it means that Daisy is unable to control the smart devices linked to Home through Shortcuts. There's no need to worry, **simply open the Home app and wait for the automatic connection update**. This issue may be caused by a problem with the connection to Apple Home.
+1. This software has no Chinese interface and solemnly declares that it does not engage in Internet information services within the territory of the People's Republic of China, not in the past, nor at present, and never in the future. All publicity, explanations, and payment channels of this software comply with the laws and regulations of the country and platform it is in. 
+2. Generally, when the computer is closed, it will automatically turn off and lock the screen. Daisy detects this and stops detecting light to avoid unnecessary reminders upon unlocking. **However, if the user has manually disabled the screen turning off feature using third-party software**, Daisy will continue to detect ambient light even when the lid is closed. This may result in multiple reminders due to poor lighting conditions. Additionally, if there are associated shortcut commands, external instructions may be triggered repeatedly. **Therefore, if you have a similar requirement, please remember to disable Daisy's detection before closing the lid and enable it again afterwards**.
+3. If you see the alert shown in the figure below, it means that Daisy is unable to control the smart devices linked to Home through Shortcuts. There's no need to worry, **simply open the Home app and wait for the automatic connection update**. This issue may be caused by a problem with the connection to Apple Home.
 
 <p align="center">
   <img src="https://i.imgur.com/i3rFp5l.png" width=400 />
