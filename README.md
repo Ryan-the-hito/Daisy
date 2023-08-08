@@ -138,15 +138,15 @@ Same as above, just drag the Pro version's .app file into the software folder (A
 4. To improve the brightness control, it is recommended to stagger the intervals by 10 degrees between increasing and decreasing instructions. This will prevent abrupt changes in light levels and allow for more flexibility in adjusting brightness. For instance, without staggering, the brightness can only be set at fixed intervals of 0, 20, 40, 60, 80, and 100 degrees. As a result, automatic instructions cannot be adjusted to intermediate levels like 50 degrees. However, by staggering the intervals by 10 degrees, it becomes possible to increase from 40 to 60 and then decrease to precisely adjust to a desired level such as 50 degrees.
 5. If you see the message "Can't connect to the Gallery." while installing or downloading shortcuts, it is likely due to network and software settings issues on your end. However, there is also a possibility that it could be a problem with Apple's server, which has occurred in the past. If this situation arises, we will need to wait for Apple to fix the server connection before proceeding. In the meantime, if you are eager to obtain the content of the shortcuts, please feel free to contact the developer through email or other contact methods provided at the top of this page. The developer can send screenshots of the shortcuts to assist you in creating them on your own.
 
-## 证书信息
+## License
 
 GPL-3.0 license
 
-## 特别致谢
+## Credit
 
 1. [Qt](https://github.com/qt)：This software follows the open-source license of Qt.
 
-## 支持作者
+## Sponsor me
 
 [Buy Me a Cup of Coffee](https://www.buymeacoffee.com/ryanthehito)
 
