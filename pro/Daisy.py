@@ -15,6 +15,7 @@ import webbrowser
 import sys
 import applescript
 import subprocess
+import signal
 try:
 	from AppKit import NSWorkspace
 except ImportError:
@@ -117,7 +118,7 @@ class window_about(QWidget):  # 增加说明页面(About)
 		widg2.setLayout(blay2)
 
 		widg3 = QWidget()
-		lbl1 = QLabel('Version 1.0.0 (Pro version)', self)
+		lbl1 = QLabel('Version 1.0.1 (Pro version)', self)
 		blay3 = QHBoxLayout()
 		blay3.setContentsMargins(0, 0, 0, 0)
 		blay3.addStretch()
@@ -579,7 +580,7 @@ class window_update(QWidget):  # 增加更新页面（Check for Updates）
 		self.initUI()
 
 	def initUI(self):  # 说明页面内信息
-		lbl = QLabel('Current Version: 1.0.0', self)
+		lbl = QLabel('Current Version: 1.0.1', self)
 		lbl.move(110, 105)
 
 		lbl0 = QLabel('Check Now:', self)
@@ -624,6 +625,11 @@ class window_update(QWidget):  # 增加更新页面（Check for Updates）
 	def activate(self):  # 设置窗口显示
 		self.show()
 
+
+class TimeoutException(Exception):
+	pass
+
+
 class window3(QWidget):  # 主窗口
 	def __init__(self):
 		super().__init__()
@@ -633,6 +639,12 @@ class window3(QWidget):  # 主窗口
 		self.mytimer = QTimer(self)
 		self.mytimer.timeout.connect(self.onTimer)
 
+	def timeout_handler(self, signum, frame):
+		raise TimeoutException("Timeout")
+
+	def notify(self, CMD, title, text):
+		subprocess.call(['osascript', '-e', CMD, title, text])
+
 	def onTimer(self):
 		active_app = NSWorkspace.sharedWorkspace().activeApplication()
 		if active_app['NSApplicationName'] != 'loginwindow':
@@ -640,21 +652,49 @@ class window3(QWidget):  # 主窗口
 			do shell script myCommand""")
 			assert resp.code == 0, resp.err
 			Brightness = int(float(resp.out)*100)
-			#print(Brightness)
 			UseShortcut = codecs.open(BasePath + 'CertAction.txt', 'r', encoding='utf-8').read()
 			if UseShortcut == '1':
 				DarkShort = codecs.open(BasePath + 'DarkTime.txt', 'r', encoding='utf-8').read()
 				BrightShort = codecs.open(BasePath + 'BrightTime.txt', 'r', encoding='utf-8').read()
 				Low = int(codecs.open(BasePath + 'Low.txt', 'r', encoding='utf-8').read())
 				High = int(codecs.open(BasePath + 'High.txt', 'r', encoding='utf-8').read())
+				signal.signal(signal.SIGALRM, self.timeout_handler)
+				signal.alarm(10)
 				if Brightness < Low:
 					cmd = """set myCommand to "shortcuts run \\"%s\\""
 					do shell script myCommand""" % (DarkShort)
-					subprocess.call(['osascript', '-e', cmd])
+					try:
+						subprocess.call(['osascript', '-e', cmd])
+					except TimeoutException:
+						quitcmd = '''tell application "Shortcuts" to quit'''
+						subprocess.call(['osascript', '-e', quitcmd])
+						CMD = '''
+						on run argv
+							display notification (item 2 of argv) with title (item 1 of argv)
+						end run'''
+						self.notify(CMD, "Daisy: Ambient Light Auto-switcher",
+									f"The device seems to be out of reach. Please check the connectivity with Home.")
+					except Exception:
+						quitcmd = '''tell application "Shortcuts" to quit'''
+						subprocess.call(['osascript', '-e', quitcmd])
 				if Brightness > High:
 					cmd = """set myCommand to "shortcuts run \\"%s\\""
 					do shell script myCommand""" % (BrightShort)
-					subprocess.call(['osascript', '-e', cmd])
+					try:
+						subprocess.call(['osascript', '-e', cmd])
+					except TimeoutException:
+						quitcmd = '''tell application "Shortcuts" to quit'''
+						subprocess.call(['osascript', '-e', quitcmd])
+						CMD = '''
+						on run argv
+							display notification (item 2 of argv) with title (item 1 of argv)
+						end run'''
+						self.notify(CMD, "Daisy: Ambient Light Auto-switcher",
+									f"The device seems to be out of reach. Please check the connectivity with Home.")
+					except Exception:
+						quitcmd = '''tell application "Shortcuts" to quit'''
+						subprocess.call(['osascript', '-e', quitcmd])
+				signal.alarm(0)
 
 	def activate(self):  # 设置窗口显示
 		if action3.isChecked():
@@ -705,7 +745,11 @@ class window4(QWidget):  # Customization settings
 		self.lbl8 = QLabel('<  Too bright', self)
 
 		self.checkBox1 = QCheckBox('Run Shortcuts when too dark or too bright:', self)
-		self.checkBox1.setChecked(False)
+		LastCert = codecs.open(BasePath + "CertAction.txt", 'r', encoding='utf-8').read()
+		if LastCert == '1':
+			self.checkBox1.setChecked(True)
+		if LastCert == '0':
+			self.checkBox1.setChecked(False)
 		self.checkBox1.clicked.connect(self.CertAction)
 
 		self.lbl4 = QLabel('   ', self)
@@ -830,6 +874,11 @@ class window4(QWidget):  # Customization settings
 		self.le4.setText(Low)
 		High = codecs.open(BasePath + 'High.txt', 'r', encoding='utf-8').read()
 		self.le5.setText(High)
+		LastCert = codecs.open(BasePath + "CertAction.txt", 'r', encoding='utf-8').read()
+		if LastCert == '1':
+			self.checkBox1.setChecked(True)
+		if LastCert == '0':
+			self.checkBox1.setChecked(False)
 
 		self.show()
 		self.setFocus()
