@@ -3,7 +3,7 @@
 
 block_cipher = None
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 info_plist = {
     'LSUIElement': True,
@@ -16,7 +16,7 @@ a = Analysis(
     binaries=[],
     datas=[('daisy-desk.icns', '.'), ('daisy-tray.icns', '.'), ('daisy.png', '.'), ('wechat50.png', '.'), ('wechat20.png', '.'), 
               ('wechat10.png', '.'), ('wechat5.png', '.'), ('alipay50.png', '.'), ('alipay20.png', '.'), ('alipay10.png', '.'), 
-              ('alipay5.png', '.'), ('SetTime.txt', '.'), ('BrightTime.txt', '.'), ('CertAction.txt', '.'), ('DarkTime.txt', '.'), ('Low.txt', '.'), ('High.txt', '.')],
+              ('alipay5.png', '.'), ('SetTime.txt', '.'), ('BrightTime.txt', '.'), ('CertAction.txt', '.'), ('DarkTime.txt', '.'), ('Low.txt', '.'), ('High.txt', '.'), ('ReLa.txt', '.')],
     hiddenimports=['subprocess', 'AppKit'],
     hookspath=[],
     hooksconfig={},

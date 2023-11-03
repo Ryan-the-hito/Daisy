@@ -16,6 +16,14 @@ import sys
 import applescript
 import subprocess
 import signal
+import time
+import os
+import urllib3
+import logging
+import requests
+from bs4 import BeautifulSoup
+import html2text
+import re
 try:
 	from AppKit import NSWorkspace
 except ImportError:
@@ -62,7 +70,6 @@ menu.addSeparator()
 
 # Add a Quit option to the menu.
 quit = QAction("Quit")
-quit.triggered.connect(app.quit)
 menu.addAction(quit)
 
 # Add the menu to the tray
@@ -118,7 +125,7 @@ class window_about(QWidget):  # 增加说明页面(About)
 		widg2.setLayout(blay2)
 
 		widg3 = QWidget()
-		lbl1 = QLabel('Version 1.0.1 (Pro version)', self)
+		lbl1 = QLabel('Version 1.0.2 (Pro version)', self)
 		blay3 = QHBoxLayout()
 		blay3.setContentsMargins(0, 0, 0, 0)
 		blay3.addStretch()
@@ -580,30 +587,36 @@ class window_update(QWidget):  # 增加更新页面（Check for Updates）
 		self.initUI()
 
 	def initUI(self):  # 说明页面内信息
-		lbl = QLabel('Current Version: 1.0.1', self)
-		lbl.move(110, 105)
+		self.lbl = QLabel('Current Version: v1.0.2', self)
+		self.lbl.move(30, 45)
 
-		lbl0 = QLabel('Check Now:', self)
-		lbl0.move(30, 20)
+		lbl0 = QLabel('Download Update:', self)
+		lbl0.move(30, 75)
+
+		lbl1 = QLabel('Latest Version:', self)
+		lbl1.move(30, 15)
+
+		self.lbl2 = QLabel('', self)
+		self.lbl2.move(122, 15)
 
 		bt1 = QPushButton('Google Drive', self)
 		bt1.setFixedWidth(120)
 		bt1.clicked.connect(self.upd)
-		bt1.move(110, 15)
+		bt1.move(150, 75)
 
 		bt3 = QPushButton('Dropbox', self)
 		bt3.setFixedWidth(120)
 		bt3.clicked.connect(self.upd3)
-		bt3.move(110, 45)
+		bt3.move(150, 105)
 
 		bt2 = QPushButton('Baidu Netdisk', self)
 		bt2.setFixedWidth(120)
 		bt2.clicked.connect(self.upd2)
-		bt2.move(110, 75)
+		bt2.move(150, 135)
 
-		self.resize(300, 140)
+		self.resize(300, 180)
 		self.center()
-		self.setWindowTitle('Check for Updates')
+		self.setWindowTitle('Daisy Updates')
 		self.setFocus()
 		self.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint)
 
@@ -624,6 +637,54 @@ class window_update(QWidget):  # 增加更新页面（Check for Updates）
 
 	def activate(self):  # 设置窗口显示
 		self.show()
+		self.checkupdate()
+
+	def checkupdate(self):
+		targetURL = 'https://github.com/Ryan-the-hito/Daisy/releases'
+		try:
+			# Fetch the HTML content from the URL
+			urllib3.disable_warnings()
+			logging.captureWarnings(True)
+			s = requests.session()
+			s.keep_alive = False  # 关闭多余连接
+			response = s.get(targetURL, verify=False)
+			response.encoding = 'utf-8'
+			html_content = response.text
+			# Parse the HTML using BeautifulSoup
+			soup = BeautifulSoup(html_content, "html.parser")
+			# Remove all images from the parsed HTML
+			for img in soup.find_all("img"):
+				img.decompose()
+			# Convert the parsed HTML to plain text using html2text
+			text_maker = html2text.HTML2Text()
+			text_maker.ignore_links = True
+			text_maker.ignore_images = True
+			plain_text = text_maker.handle(str(soup))
+			# Convert the plain text to UTF-8
+			plain_text_utf8 = plain_text.encode(response.encoding).decode("utf-8")
+
+			for i in range(10):
+				plain_text_utf8 = plain_text_utf8.replace('\n\n\n\n', '\n\n')
+				plain_text_utf8 = plain_text_utf8.replace('\n\n\n', '\n\n')
+				plain_text_utf8 = plain_text_utf8.replace('   ', ' ')
+				plain_text_utf8 = plain_text_utf8.replace('  ', ' ')
+
+			pattern2 = re.compile(r'(v\d+\.\d+\.\d+)\sLatest')
+			result = pattern2.findall(plain_text_utf8)
+			result = ''.join(result)
+			nowversion = self.lbl.text().replace('Current Version: ', '')
+			if result == nowversion:
+				alertupdate = result + '. You are up to date!'
+				self.lbl2.setText(alertupdate)
+				self.lbl2.adjustSize()
+			else:
+				alertupdate = result + ' is ready!'
+				self.lbl2.setText(alertupdate)
+				self.lbl2.adjustSize()
+		except:
+			alertupdate = 'No Intrenet'
+			self.lbl2.setText(alertupdate)
+			self.lbl2.adjustSize()
 
 
 class TimeoutException(Exception):
@@ -634,6 +695,7 @@ class window3(QWidget):  # 主窗口
 	def __init__(self):
 		super().__init__()
 		self.initUI()
+		self.ReLa()
 	
 	def initUI(self):
 		self.mytimer = QTimer(self)
@@ -702,6 +764,13 @@ class window3(QWidget):  # 主窗口
 			self.mytimer.start(1000*SetTime)
 		if not action3.isChecked():
 			self.mytimer.stop()
+
+	def ReLa(self):
+		ReLa = codecs.open(BasePath + "ReLa.txt", 'r', encoding='utf-8').read()
+		if ReLa == '1':
+			action3.setChecked(True)
+			SetTime = int(codecs.open(BasePath + 'SetTime.txt', 'r', encoding='utf-8').read())
+			self.mytimer.start(1000 * SetTime)
 
 	def keyPressEvent(self, e):  # 当页面显示的时候，按下esc键可关闭窗口
 		if e.key() == Qt.Key.Key_Escape.value:
@@ -852,6 +921,11 @@ class window4(QWidget):  # Customization settings
 		if not self.checkBox1.isChecked():
 			with open(BasePath + "CertAction.txt", 'w', encoding='utf-8') as f0:
 				f0.write('0')
+
+	def totalquit(self):
+		with open(BasePath + "ReLa.txt", 'w', encoding='utf-8') as f0:
+			f0.write('0')
+		sys.exit(0)
 	
 	def center(self):  # 设置窗口居中
 		qr = self.frameGeometry()
@@ -973,18 +1047,33 @@ style_sheet_ori = '''
 '''
 
 if __name__ == '__main__':
-	w1 = window_about()  # about
-	w2 = window_update()  # update
-	w3 = window3()  # main1
-	w3.setAutoFillBackground(True)
-	p = w3.palette()
-	p.setColor(w3.backgroundRole(), QColor('#ECECEC'))
-	w3.setPalette(p)
-	w4 = window4()  # CUSTOMIZING
-	action1.triggered.connect(w1.activate)
-	action2.triggered.connect(w2.activate)
-	action3.triggered.connect(w3.activate)
-	action7.triggered.connect(w4.activate)
-	btna4.triggered.connect(w3.activate)
-	app.setStyleSheet(style_sheet_ori)
-	app.exec()
+	while True:
+		try:
+			w1 = window_about()  # about
+			w2 = window_update()  # update
+			w3 = window3()  # main1
+			w3.setAutoFillBackground(True)
+			p = w3.palette()
+			p.setColor(w3.backgroundRole(), QColor('#ECECEC'))
+			w3.setPalette(p)
+			w4 = window4()  # CUSTOMIZING
+			action1.triggered.connect(w1.activate)
+			action2.triggered.connect(w2.activate)
+			action3.triggered.connect(w3.activate)
+			action7.triggered.connect(w4.activate)
+			btna4.triggered.connect(w3.activate)
+			quit.triggered.connect(w4.totalquit)
+			app.setStyleSheet(style_sheet_ori)
+			app.exec()
+		except Exception as e:
+			# 发生异常时打印错误信息
+			p = "程序发生异常:" + str(e)
+			with open(BasePath + "Error.txt", 'w', encoding='utf-8') as f0:
+				f0.write(p)
+			# 延时一段时间后重新启动程序（例如延时 5 秒）
+			time.sleep(5)
+			# 重启后的操作
+			with open(BasePath + "ReLa.txt", 'w', encoding='utf-8') as f0:
+				f0.write('1')
+			# 使用 os.execv() 在当前进程中启动自身，实现自动重启
+			os.execv(sys.executable, [sys.executable, __file__])
