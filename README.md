@@ -173,3 +173,34 @@ GPL-3.0 license
   <img src="https://i.imgur.com/OHHJD4y.png" width=240 />
   <img src="https://i.imgur.com/6XiKMAK.png" width=240 />
 </p>
+
+## Notifications
+
+### 2023-11-07 The new update and BetterTouchTool functions
+
+Hey! The Daisy pro version has been updated to v1.0.2 last week. And I would like to tell all of the Daisy users that now Daisy has fixed the issue of being killed by macOS in the background. Still, I have made Daisy look better in its update panel, which now offers dynamic check for latest releases. Any recommendation and comment would be favored in the Telegram group and via E-mails.
+
+As for other apps with similar functions, I have noticed that BetterTouchTool has made some related functions to ambient light check and detection. In the latest release, you can see this function described as below.
+
+![BTT](https://i.imgur.com/KezKnON.png)
+
+And within the setting panel, you will find such functions. If you attach some Shortcuts to control your light bulbs (with Home support), it will be like the same as Daisy.
+
+<p align="center">
+  <img src="https://i.imgur.com/LCnVjwj.png" width=300 />
+  <img src="https://i.imgur.com/byYEI9C.png" width=300 />
+</p>
+
+So is Daisy still necessary? I think so. And I have found some points that makes Daisy different. 
+
+**First,** Daisy may be the first to detect ambient light and give you notifications. Well, it’s not a new comer~
+
+**And second,** Daisy detects not only your ambient light, but also your screen light, or to make it easy, Daisy get data via your auto-changed screen light. Why not just use the sensor? The data from sensor would change dramatically and will easily trigger actions, which would easily resulted in false actions. Screen light will always be adjusted to the level that most people feel comfortable with, so if this level itself is too high or too low, it makes sense to notify you that you should pay more attention to your environment.
+
+**Third,** as you can see from the setting panel, BetterTouchTool set the threshold using an absolute value, assuming the ambient light now is valued 1 (which is the absolute value related to the current value). This is typically difficult in determining how much value should I use when it is too dark or too bright. As the developer, I have tried using some data from the sensor, and it were all in digits, which is way too difficult for users. Daisy uses percentage, and 100% is always the brightest of your screen. I think this would be the easiest way to understand.
+
+**Fourth,** BetterTouchTool introduced this function in such logic: Ambient light changes → Your Mac sleeps. The trigger is light and the action is to set your Mac. But Daisy comes in another way. Ambient light changes → Mac notifications → Light bulbs get brighter → Ambient light changes. Daisy’s focus has always been on the outside environment, rather within your Mac. Thus, Daisy is an app aiming at protecting your eyes.
+
+**Fifth,** if you are going to control your bulb, both BetterTouchTool and Daisy will rely on Shortcuts. Just like how you use BetterTouchTool to assign different tasks in every scenario, you can do it with Daisy too by adding actions in certain Shortcuts script. Thus you would have more actions to be done, and it is as flexible as BetterTouchTool.
+
+I hope that you may get a better understanding of Daisy’s positioning after reading the explanations above. I love BetterTouchTool too but it differs from Daisy in several ways. I also hope you will have a good time using both tools to make your life better.🥰
