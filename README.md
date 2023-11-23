@@ -143,6 +143,10 @@ Simply drag the new version's .app file into the software folder (Application).
 
 Same as above, just drag the Pro version's .app file into the software folder (Application).
 
+## Q&A
+
+If there are any special circumstances, please visit **[Q&A](https://github.com/Ryan-the-hito/Q-A)❓** to see if there are ready-made solutions or contact me for further assistance.
+
 ## Notice
 
 1. This software has no Chinese interface and solemnly declares that it does not engage in Internet information services within the territory of the People's Republic of China, not in the past, nor at present, and never in the future. All publicity, explanations, and payment channels of this software comply with the laws and regulations of the country and platform it is in. 
